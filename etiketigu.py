@@ -94,8 +94,8 @@ def fill_page(contacts):
     for curline in range (0, nb_lines):
         nb_col = min(len(contacts) - (curline * CONST_COL_NUMBER), CONST_COL_NUMBER) 
         for curcol in range (0, nb_col):
-            x = CONST_COL_SIZE * curline
-            y = CONST_LINE_SIZE * curcol
+            x = CONST_TOP_MARGIN + CONST_COL_SIZE * curline
+            y = CONST_LEFT_MARGIN + CONST_LINE_SIZE * curcol
             txtFrameName= "etiketo"+str(curline)+str(curcol)
             scribus.createText(y, x, CONST_LINE_SIZE, CONST_COL_SIZE, txtFrameName)
             contact_idx=curline*CONST_COL_NUMBER+curcol
